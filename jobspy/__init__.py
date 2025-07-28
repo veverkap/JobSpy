@@ -6,6 +6,7 @@ from typing import Tuple
 import pandas as pd
 
 from jobspy.bayt import BaytScraper
+from jobspy.bdjobs import BDJobs
 from jobspy.glassdoor import Glassdoor
 from jobspy.google import Google
 from jobspy.indeed import Indeed
@@ -24,6 +25,8 @@ from jobspy.util import (
 )
 from jobspy.ziprecruiter import ZipRecruiter
 
+
+# Update the SCRAPER_MAPPING dictionary in the scrape_jobs function
 
 def scrape_jobs(
     site_name: str | list[str] | Site | list[Site] | None = None,
@@ -60,6 +63,7 @@ def scrape_jobs(
         Site.GOOGLE: Google,
         Site.BAYT: BaytScraper,
         Site.NAUKRI: Naukri,
+        Site.BDJOBS: BDJobs,  # Add BDJobs to the scraper mapping
     }
     set_logger_level(verbose)
     job_type = get_enum_from_value(job_type) if job_type else None
@@ -214,3 +218,9 @@ def scrape_jobs(
         ).reset_index(drop=True)
     else:
         return pd.DataFrame()
+
+
+# Add BDJobs to __all__
+__all__ = [
+    "BDJobs",
+]
