@@ -35,6 +35,7 @@ from jobspy.util import (
     extract_emails_from_text,
     currency_parser,
     markdown_converter,
+    plain_converter,
     create_session,
     remove_attributes,
     create_logger,
@@ -267,7 +268,8 @@ class LinkedIn(Scraper):
             description = div_content.prettify(formatter="html")
             if self.scraper_input.description_format == DescriptionFormat.MARKDOWN:
                 description = markdown_converter(description)
-
+            elif self.scraper_input.description_format == DescriptionFormat.PLAIN:
+                description = plain_converter(description)
         h3_tag = soup.find(
             "h3", text=lambda text: text and "Job function" in text.strip()
         )
