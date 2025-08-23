@@ -165,7 +165,7 @@ class LinkedIn(Scraper):
 
             if continue_search():
                 time.sleep(random.uniform(self.delay, self.delay + self.band_delay))
-                start += len(job_list)
+                start += len(job_cards)
 
         job_list = job_list[: scraper_input.results_wanted]
         return JobResponse(jobs=job_list)
