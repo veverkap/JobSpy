@@ -91,6 +91,6 @@ def is_job_remote(title: dict, description: str, location: Location) -> bool:
     """
     remote_keywords = ["remote", "work from home", "wfh"]
     location = location.display_location()
-    full_string = f'{title} {description} {location}'.lower()
+    full_string = f"{title} {description} {location}".lower()
     is_remote = any(keyword in full_string for keyword in remote_keywords)
     return is_remote

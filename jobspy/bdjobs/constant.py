@@ -1,4 +1,4 @@
-#constant.py
+# constant.py
 # Headers for BDJobs requests
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
@@ -17,9 +17,9 @@ search_params = {
 # Selectors for job listings
 job_selectors = [
     "div.job-item",  # Catches both normal and premium job cards, as well as other types
-    "div.sout-jobs-wrapper", # Catches job listings in the main search results page
-    "div.norm-jobs-wrapper", # Catches normal job listings
-    "div.featured-wrap",     # Catches featured job listings
+    "div.sout-jobs-wrapper",  # Catches job listings in the main search results page
+    "div.norm-jobs-wrapper",  # Catches normal job listings
+    "div.featured-wrap",  # Catches featured job listings
 ]
 
 # Date formats used by BDJobs
