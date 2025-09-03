@@ -28,6 +28,7 @@ from jobspy.ziprecruiter import ZipRecruiter
 
 # Update the SCRAPER_MAPPING dictionary in the scrape_jobs function
 
+
 def scrape_jobs(
     site_name: str | list[str] | Site | list[Site] | None = None,
     search_term: str | None = None,
@@ -185,7 +186,7 @@ def scrape_jobs(
                 else None
             )
 
-            #naukri-specific fields
+            # naukri-specific fields
             job_data["skills"] = (
                 ", ".join(job_data["skills"]) if job_data["skills"] else None
             )

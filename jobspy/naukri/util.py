@@ -5,7 +5,7 @@ from jobspy.model import JobType, Location
 from jobspy.util import get_enum_from_job_type
 
 
-def parse_job_type(soup: BeautifulSoup |str) -> list[JobType] | None:
+def parse_job_type(soup: BeautifulSoup | str) -> list[JobType] | None:
     """
     Gets the job type from the job page
     """
